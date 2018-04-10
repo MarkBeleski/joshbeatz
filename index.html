@@ -1,0 +1,289 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>DJ Josh Beatz</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" 
+        href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" 
+        integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" 
+        crossorigin="anonymous">
+
+  <style>
+    * { box-sizing: border-box; font-family: Verdana, Geneva, Tahoma, sans-serif; }
+
+    html, body, #landing-page {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    }
+
+    body { background: url(./img/senunas-crowd.jpg) no-repeat center center fixed; }
+
+    #landing-page {  display: table; }
+    #hero, #social { display: table-row; }
+
+    /* 
+    #hero {
+      background-color: rgb(36, 95, 172);
+    } 
+    */
+    
+    #social {
+      height: 140px;
+      background-color: RGB(255,255,255,0.5);
+    }
+
+
+    /* Contact Form */
+    #contact {
+      float: left;
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    section .grid {
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    [class^="block"] {
+      float: left;
+    }
+
+    [class^="block"] label,
+    [class^="block"] input[type="text"],
+    [class^="block"] textarea {
+      display: block;
+      width: 100%!important;
+    }
+
+    [class^="block"] input[type="text"],
+    [class^="block"] textarea{
+      font-size: 20px;
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    [class^="block"] {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-bottom: 12px;
+    }
+    
+    [class^="block"] label { 
+      font-size: 16px;
+      padding-bottom: 6px;
+    }
+
+    .block-1-of-4 { width: 25%; }
+    .block-1-of-2 { width: 50%; }
+    .block-1-of-1 { width: 100%; }
+
+    .text-center { text-align: center!important; }
+    .bg-primary { background-color: #42a24f!important; }
+
+    .text-center { text-align: center }
+    .text-white label,
+    .text-white h1,
+    .text-white h2 { color: #fff; }
+    .mt-0 { margin-top: 0!important; }
+
+    #beatz-logo {
+      width: 140%;
+    }
+
+    section#social span#logo { 
+      width: 380px;
+      padding-right: 120px;
+    }
+
+    section#social span.fa-stack { 
+      padding-top: 10px;
+      font-size: 60px;
+      width: 160px;
+    }
+    .fa-stack-1x { color: #42A24f }
+    .fa-stack-1x:hover { color: #fff }
+
+   .fa-stack.facebook:hover { color: rgb(59, 89, 152); }
+   .fa-stack.instagram:hover { color: #D92E7F; }
+   .fa-stack.mixcloud:hover { color: #9B36B7; }
+   .fa-stack.envelope:hover { color: #42a24f; }
+    
+    /* 
+    @media only screen and (min-width : 1200px) {
+    }
+    @media only screen and (min-width : 992px) {
+    }
+    @media only screen and (min-width : 768px) {
+    }
+    @media only screen and (min-width : 480px) {
+    }
+    @media only screen and (min-width : 320px) {
+    }
+     */
+    @media only screen and (max-width : 1200px) {
+    section#social span#logo { 
+      width: 290px;
+      padding-right: 90px;
+    }
+    section#social span.fa-stack { 
+      padding-top: 5px;
+      font-size: 45px;
+      width: 110px;
+    }
+    #social { height: 100px; }
+    }
+    @media only screen and (max-width : 992px) {
+      section#social span#logo { 
+        width: 260px;
+        padding-right: 80px;
+      }
+      section#social span.fa-stack { 
+        padding-top: 5px;
+        font-size: 40px;
+        width: 100px;
+      }
+      #social { height: 90px; }
+    }
+    @media only screen and (max-width : 768px) {
+      section#social span#logo { 
+        width: 210px;
+        padding-right: 60px;
+      }
+      section#social span.fa-stack { 
+        padding-top: 5px;
+        font-size: 36px;
+        width: 80px;
+      }
+      #social { height: 80px; }
+    }
+    @media only screen and (max-width : 570px) {
+      #social {
+        height: 140px;
+      }
+      #logo {
+        display: block;
+        margin: 0 auto;
+        padding-bottom: 10px;
+      }
+
+      section#social span#logo { 
+        width: 200px;
+        padding-right: 50px;
+      }
+      section#social span.fa-stack { 
+        padding-top: 5px;
+        font-size: 30px;
+        width: 70px;
+      }
+    }
+    @media only screen and (max-width : 320px) {
+      section#social span.fa-stack { 
+        padding-top: 5px;
+        font-size: 28px;
+        width: 64px;
+      }
+      #social { height: 70px; }
+    }
+    a:link { color: inherit; }
+    a:visited { color: inherit; }
+  </style>
+
+  <!--[if lt IE 9]> <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script> <![endif]-->
+</head>
+
+<body>
+    <div id="landing-page">
+      
+      <!-- HERO - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section id="hero" class="text-center">
+        
+      </section><!-- / HERO - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      
+      <!-- SOCIAL ICONS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section id="social" class="text-center">
+
+        <div>
+            <a href="./index.html">
+              <span id="logo" class="fa-stack">
+                  <img alt="Josh Beatz Logo" src="./img/logo-large.png" id="beatz-logo">
+              </span>
+            </a>
+
+            <a href="https://www.facebook.com/djjoshbeatz/">
+              <span class="fa-stack facebook">
+                <i class="fa fa-circle fa-stack-2x facebook"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+            <a href="https://www.instagram.com/josh.beatz/">  
+              <span class="fa-stack instagram">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+            <a href="https://www.mixcloud.com/JoshBeatz/">
+              <span class="fa-stack mixcloud">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fab fa-mixcloud fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+            <a href="#contact">
+              <span class="fa-stack envelope">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </div>
+      </section><!-- / SOCIAL ICONS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    </div>
+    <section id="contact" class="bg-primary text-white">
+      <form id="contactform" method="POST" action="https://formspree.io/mark.beleski@outlook.com">
+        <div class="grid">
+            <h2 class="text-center mt-0">Contact</h2>
+
+            <input type="hidden" name="_language" value="en" />
+            <input type="text" name="_gotcha" style="display:none" />
+            <div class="block-1-of-2">
+                
+                <label for="first-name">First Name</label>
+                <input id="first-name" name="first-name" type="text" />
+            </div>
+
+            <div class="block-1-of-2">
+                <label for="last-name">Last Name</label>
+                <input id="last-name" name="last-name" type="text" />
+            </div>
+
+            <div class="block-1-of-1">
+                <label for="email-address">Email Address</label>
+                <input id="email-address" name="email" type="text" />
+            </div>
+
+            <div class="block-1-of-1">
+                <label for="email-address">Email Message</label>
+                <textarea id="email-message" name="message" rows="8"></textarea>
+            </div>
+            
+            <div class="block-1-of-4">
+              <input type="submit" value="Send">
+            </div>
+
+        </div>
+      </form>
+    </section>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
