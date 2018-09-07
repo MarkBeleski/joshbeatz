@@ -2,15 +2,16 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
   <title>DJ Josh Beatz</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
 
-  <link rel="stylesheet" 
-        href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" 
-        integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" 
+  <meta name="description" content="The HTML5 Herald">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+        integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S"
         crossorigin="anonymous">
 
   <style>
@@ -22,29 +23,33 @@
       margin: 0;
     }
 
-    body { background: url(./img/senunas-crowd.jpg) no-repeat center center fixed; }
+    body {
+      /* background: url(./img/senunas-crowd.jpeg) no-repeat center center fixed; */
+      background-size: cover;
+      background-color: rgb(0, 0, 0);
+      font-size: 16px;
+    }
+
+    a:link { color: inherit; }
+    a:visited { color: inherit; }
 
     #landing-page {  display: table; }
     #hero, #social { display: table-row; }
 
-    /* 
+    /*
     #hero {
       background-color: rgb(36, 95, 172);
-    } 
-    */
-    
-    #social {
-      height: 140px;
-      background-color: RGB(255,255,255,0.5);
     }
+    */
 
+    #social {height: 0; background-color: rgb(255,255,255,0.5); }
 
     /* Contact Form */
     #contact {
       float: left;
       width: 100%;
-      padding-top: 20px;
-      padding-bottom: 20px;
+      padding-top: 1.25em;
+      padding-bottom: 1.25em;
     }
 
     section .grid {
@@ -53,35 +58,63 @@
       margin-left: auto;
       margin-right: auto;
     }
-    
+
+    button {
+      font: inherit;
+      margin: 0;
+      display: inline-block;
+      padding: .1875em .375em;
+      margin-bottom: 0;
+      font-size: 1.5em;
+      font-weight: 400;
+      line-height: 1.25em;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-image: none;
+      border: .125em solid transparent;
+      border-radius: .25em;
+      color: rgb(255, 255, 255);
+      background-color: transparent;
+      border-color: rgb(255, 255, 255);
+    }
+
+
+    [class^="block"] { float: left; }
+    [class^="block"] label, [class^="block"] input[type="text"], [class^="block"] textarea { display: block; width: 100%; }
+
+    [class^="block"] input[type="text"],[class^="block"] textarea {
+      padding: .1875em .375em;
+      font-size: 1.75em;
+      color: rgb(40, 40, 40);
+      background-color: rgb(255, 255, 255);
+      border: .125em solid rgb(255, 255, 255, .75);
+      border-radius: .25em;
+      -webkit-transition: border-color ease-in-out .5s,-webkit-box-shadow ease-in-out .5s;
+      -o-transition: border-color ease-in-out .5s,box-shadow ease-in-out .5s;
+      transition: border-color ease-in-out .5s,box-shadow ease-in-out .5s;
+    }
+
+    /* [class^="block"] input[type="text"] {
+         CAN DELETE
+       } */
+
     [class^="block"] {
-      float: left;
+      padding-left: .75em;
+      padding-right: .75em;
+      margin-bottom: 1em;
     }
 
-    [class^="block"] label,
-    [class^="block"] input[type="text"],
-    [class^="block"] textarea {
-      display: block;
-      width: 100%!important;
-    }
-
-    [class^="block"] input[type="text"],
-    [class^="block"] textarea{
-      font-size: 20px;
-      padding: 6px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-    [class^="block"] {
-      padding-left: 15px;
-      padding-right: 15px;
-      margin-bottom: 12px;
-    }
-    
-    [class^="block"] label { 
-      font-size: 16px;
-      padding-bottom: 6px;
+    [class^="block"] label {
+      font-size: 1em;
+      padding-bottom: .375em;
     }
 
     .block-1-of-4 { width: 25%; }
@@ -91,154 +124,174 @@
     .text-center { text-align: center!important; }
     .bg-primary { background-color: #42a24f!important; }
 
-    .text-center { text-align: center }
-    .text-white label,
-    .text-white h1,
-    .text-white h2 { color: #fff; }
-    .mt-0 { margin-top: 0!important; }
+    .text-center { text-align: center } /* Remove class and embed styles */
+    .text-white label,                  /* Remove class and embed styles */
+    .text-white h1,                     /* Remove class and embed styles */
+    .text-white h2 { color: #fff; }   /* Remove class and embed styles */
+    .mt-0 { margin-top: 0!important; }  /* Remove class and embed styles */
 
-    #beatz-logo {
-      width: 140%;
+    @keyframes slideInFromBottom { 0%{transform:translateY(100%);} 100%{transform:translateY(0);}}
+    section#social { animation: 1.4s ease-out 0s 1 slideInFromBottom; }
+    section#social div { animation: 1s ease-in 0s 1 slideInFromBottom; }
+
+    .fa-stack-1x { color: rgb(65, 160, 80) }
+    .fa-stack-1x:hover { color: rgb(255, 255, 255) }
+
+    .fa-stack.facebook:hover { color: rgb(60, 90, 150); }
+    .fa-stack.instagram:hover { color: rgb(220, 50, 125); }
+    .fa-stack.mixcloud:hover { color: rgb(155, 60, 185); }
+    .fa-stack.envelope:hover { color: rgb(65, 160, 80); }
+
+    section#social span#logo,
+    section#social a:nth-child(1) { display: inline-block; margin: 0 auto; }
+
+    /* DELETE
+        section#social span.fa-stack {
+        width: 22%;
+        padding: 0 .25%;
+        margin-bottom: .25em;
+        margin-top: -.25em;
+        margin-bottom: .25em;
+        margin-top: -.25em;
+      } */
+
+
+
+    /* Phone (320px - 608px) */
+    @media only screen and (orientation : portrait) and (min-width : 19.99999em) and (max-width : 39.9em) {
+      section#social span.fa-stack { width: 22%; padding: 0 .25%; margin-bottom: .25em; margin-top: -.25em; margin-bottom: .25em; margin-top: -.25em; }
     }
 
-    section#social span#logo { 
-      width: 380px;
-      padding-right: 120px;
+    @media only screen and (orientation : portrait) and (min-width : 20em) { section#social span.fa-stack { font-size: 2.0em!important; } }
+    @media only screen and (orientation : portrait) and (min-width : 22em) { section#social span.fa-stack { font-size: 2.2em!important; } }
+    @media only screen and (orientation : portrait) and (min-width : 24em) { section#social span.fa-stack { font-size: 2.4em!important; } }
+    @media only screen and (orientation : portrait) and (min-width : 26em) { section#social span.fa-stack { font-size: 2.6em!important; } }
+    @media only screen and (orientation : portrait) and (min-width : 28em) { section#social span.fa-stack { font-size: 2.8em!important; } }
+    @media only screen and (orientation : portrait) and (min-width : 30em) { section#social span.fa-stack { font-size: 3.0em!important; } }
+    @media only screen and (orientation : portrait) and (min-width : 32em) { section#social span.fa-stack { font-size: 3.2em!important; } }
+    @media only screen and (orientation : portrait) and (min-width : 34em) { section#social span.fa-stack { font-size: 3.4em!important; } }
+    @media only screen and (orientation : portrait) and (min-width : 36em) { section#social span.fa-stack { font-size: 3.6em!important; } }
+    @media only screen and (orientation : portrait) and (min-width : 38em) { section#social span.fa-stack { font-size: 3.8em!important; } }
+
+
+
+
+    /* Tablet (640px - px) */
+    @media only screen and (orientation : portrait) and (min-width : 39.99999em) {
+      section#social a:nth-child(1) { width: 40% }
+      section#social a:not(:nth-child(1)) { width: 5% }
+      section#social span.fa-stack {
+        margin-top: -2.25em;
+        font-size: 2em!important;
+        /* padding: 0 .15%;
+        margin-bottom: .25em;
+        margin-top: -.25em;
+        margin-bottom: .25em; */
+      }
+    }
+    /* 40em (640px) */
+    @media only screen and (orientation : portrait) and (min-width : 40em) {
+
     }
 
-    section#social span.fa-stack { 
-      padding-top: 10px;
-      font-size: 60px;
-      width: 160px;
-    }
-    .fa-stack-1x { color: #42A24f }
-    .fa-stack-1x:hover { color: #fff }
+    /* 45em (720) */
+    /* 48em (768px) */
+    @media only screen and (min-width : 48em) {
 
-   .fa-stack.facebook:hover { color: rgb(59, 89, 152); }
-   .fa-stack.instagram:hover { color: #D92E7F; }
-   .fa-stack.mixcloud:hover { color: #9B36B7; }
-   .fa-stack.envelope:hover { color: #42a24f; }
-    
-    /* 
-    @media only screen and (min-width : 1200px) {
     }
-    @media only screen and (min-width : 992px) {
+
+    /* 56.25em (900px) */
+    @media only screen and (min-width : 56.25em) {
     }
-    @media only screen and (min-width : 768px) {
+
+    /* 68.75em (1100px) */
+    @media only screen and (min-width : 68.75em) {
     }
-    @media only screen and (min-width : 480px) {
+    /* 81.25em (1300px) */
+    @media only screen and (min-width : 81.25em) {
     }
-    @media only screen and (min-width : 320px) {
-    }
-     */
-    @media only screen and (max-width : 1200px) {
-    section#social span#logo { 
-      width: 290px;
-      padding-right: 90px;
-    }
-    section#social span.fa-stack { 
-      padding-top: 5px;
-      font-size: 45px;
-      width: 110px;
-    }
-    #social { height: 100px; }
-    }
-    @media only screen and (max-width : 992px) {
-      section#social span#logo { 
-        width: 260px;
-        padding-right: 80px;
-      }
-      section#social span.fa-stack { 
-        padding-top: 5px;
-        font-size: 40px;
-        width: 100px;
-      }
-      #social { height: 90px; }
-    }
-    @media only screen and (max-width : 768px) {
-      section#social span#logo { 
-        width: 210px;
-        padding-right: 60px;
-      }
-      section#social span.fa-stack { 
-        padding-top: 5px;
-        font-size: 36px;
-        width: 80px;
-      }
-      #social { height: 80px; }
-    }
-    @media only screen and (max-width : 570px) {
-      #social {
-        height: 140px;
-      }
-      #logo {
+    /* @media only screen and (min-width : 30em) {
+      section#social span#logo {
+        width: 18em;
         display: block;
         margin: 0 auto;
-        padding-bottom: 10px;
       }
+      section#social span.fa-stack {
+        font-size: 3em;
+        width: 23%;
+        padding: 0 1%;
+      }
+    }
+    @media only screen and (min-width : 20em) {
+      section#social span#logo {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+      }
+    } */
 
-      section#social span#logo { 
-        width: 200px;
-        padding-right: 50px;
+    @media (min-height: 980px), screen and (orientation: portrait) {
+      .block-1-of-2 {
+        width: 100%;
       }
-      section#social span.fa-stack { 
-        padding-top: 5px;
-        font-size: 30px;
-        width: 70px;
+      button {
+        font-size: 32px;
+      }
+      [class^="block"] label {
+        font-size: 32px;
+        padding-bottom: 6px;
+      }
+      [class^="block"] input[type="text"],
+      [class^="block"] textarea {
+        font-size: 56px;
+      }
+      [class^="block"] input[type="text"] {
+        height: 80px;
       }
     }
-    @media only screen and (max-width : 320px) {
-      section#social span.fa-stack { 
-        padding-top: 5px;
-        font-size: 28px;
-        width: 64px;
-      }
-      #social { height: 70px; }
-    }
-    a:link { color: inherit; }
-    a:visited { color: inherit; }
+
   </style>
 
   <!--[if lt IE 9]> <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script> <![endif]-->
 </head>
 
-<body>
+<body class="wrap">
     <div id="landing-page">
-      
+
       <!-- HERO - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section id="hero" class="text-center">
-        
+
       </section><!-- / HERO - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-      
+
       <!-- SOCIAL ICONS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <section id="social" class="text-center">
 
         <div>
-            <a href="./index.html">
-              <span id="logo" class="fa-stack">
-                  <img alt="Josh Beatz Logo" src="./img/logo-large.png" id="beatz-logo">
+            <a href="./index.html"  style="text-decoration: none;">
+              <span id="logo" class="">
+                  <img alt="Josh Beatz Logo" src="./img/logo-min.png" id="beatz-logo" style="width: 100%;">
               </span>
             </a>
 
-            <a href="https://www.facebook.com/djjoshbeatz/">
+            <a href="https://www.facebook.com/djjoshbeatz/" style="text-decoration: none;">
               <span class="fa-stack facebook">
                 <i class="fa fa-circle fa-stack-2x facebook"></i>
                 <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
               </span>
             </a>
-            <a href="https://www.instagram.com/josh.beatz/">  
+            <a href="https://www.instagram.com/josh.beatz/" style="text-decoration: none;">
               <span class="fa-stack instagram">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
               </span>
             </a>
-            <a href="https://www.mixcloud.com/JoshBeatz/">
+            <a href="https://www.mixcloud.com/JoshBeatz/" style="text-decoration: none;">
               <span class="fa-stack mixcloud">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fab fa-mixcloud fa-stack-1x fa-inverse"></i>
               </span>
             </a>
-            <a href="#contact">
+            <a href="#contact" style="text-decoration: none;">
               <span class="fa-stack envelope">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
@@ -256,7 +309,7 @@
             <input type="hidden" name="_language" value="en" />
             <input type="text" name="_gotcha" style="display:none" />
             <div class="block-1-of-2">
-                
+
                 <label for="first-name">First Name</label>
                 <input id="first-name" name="first-name" type="text" />
             </div>
@@ -273,17 +326,35 @@
 
             <div class="block-1-of-1">
                 <label for="email-address">Email Message</label>
-                <textarea id="email-message" name="message" rows="8"></textarea>
+                <textarea id="email-message" name="message" rows="6"></textarea>
             </div>
-            
+
             <div class="block-1-of-4">
-              <input type="submit" value="Send">
+              <button type="submit"><i class="far fa-envelope"></i> Send Email</button>
             </div>
 
         </div>
       </form>
     </section>
 
-  <script src="js/scripts.js"></script>
+  <script>
+    var images = [
+      'img/senunas-crowd.jpeg',
+      'http://kb4images.com/images/image/37185176-image.jpg',
+      'http://kb4images.com/images/image/37272651-image.jpg'
+    ];
+
+    var x = 0;
+    var changeImage = function () {
+      document.getElementsByTagName('body')[0].style.backgroundImage='url(' + images[x] + ')';
+      x++;
+      if (images.length == x) {
+        x = 0;
+      }
+    }
+
+    changeImage();
+    /* setInterval('changeImage()', 3000); */
+  </script>
 </body>
 </html>
